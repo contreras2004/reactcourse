@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, StyleSheet, Text, View, Image } from 'react-native';
 import { useEffect, useState } from 'react';
-import Carousel from 'react-native-reanimated-carousel';
+import CustomCarousel from './src/components/CustomCarousel/CustomCarousel';
 
 export default function App() {
-  const width = Dimensions.get('window').width;
   const [memes, setMemes] = useState<string[]>([]);
 
   useEffect(() => {
@@ -21,16 +20,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.helloText}>Choose your meme 👀</Text>
       {memes.length > 0 ? (
-        <Carousel
-          loop
-          width={width}
-          height={width}
-          autoPlay={true}
-          data={memes}
-          scrollAnimationDuration={1000}
-          onSnapToItem={(index) => console.log('current index:', index)}
-          renderItem={({ item }) => <Card imageUrl={item} />}
-        />
+        <CustomCarousel data={memes} />
       ) : (
         <Text>Loading...</Text>
       )}
@@ -38,12 +28,6 @@ export default function App() {
     </View>
   );
 }
-
-const Card = ({ imageUrl }: { imageUrl: string }) => (
-  <View style={styles.card}>
-    <Image source={{ uri: imageUrl }} style={styles.image} resizeMode="contain" />
-  </View>
-);
 
 const styles = StyleSheet.create({
   container: {
@@ -54,23 +38,5 @@ const styles = StyleSheet.create({
   },
   helloText: {
     paddingTop: 60,
-  },
-  card: {
-    flex: 1,
-    borderWidth: 1,
-    justifyContent: 'center',
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    marginHorizontal: 10,
-    marginVertical: 10,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 10,
-  },
+  }
 });
