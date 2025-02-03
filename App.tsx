@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Dimensions, StyleSheet, Text, View, Image } from 'react-native';
 import { useEffect, useState } from 'react';
 import CustomCarousel from './src/components/CustomCarousel/CustomCarousel';
+import "./global.css";
 
 export default function App() {
   const [memes, setMemes] = useState<string[]>([]);
@@ -10,15 +11,18 @@ export default function App() {
     fetch('https://api.imgflip.com/get_memes')
       .then((response) => response.json())
       .then((data) => {
-        const memeUrls = data.data.memes.map((meme: any) => meme.url);
-        setMemes(memeUrls);
+        const memesData = data.data.memes.map((meme: any) => ({
+          url: meme.url,
+          name: meme.name,
+        }));
+        setMemes(memesData);
       })
       .catch((error) => console.error(error));
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.helloText}>Choose your meme 👀</Text>
+      <Text className='text-3xl mt-10 text-blue-600' style={styles.helloText}>Choose your meme 👀</Text>
       {memes.length > 0 ? (
         <CustomCarousel data={memes} />
       ) : (
@@ -40,3 +44,4 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   }
 });
+

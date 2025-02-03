@@ -2,8 +2,9 @@ import React from 'react';
 import { Dimensions, Text, View, Image, StyleSheet } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import Card from './Card';
+import { Meme } from './Card';
 
-const CustomCarousel = ({ data }: { data: string[] }) => {
+const CustomCarousel = ({ data }: { data: Meme[] }) => {
   const width = Dimensions.get('window').width;
   
   return (
@@ -15,8 +16,8 @@ const CustomCarousel = ({ data }: { data: string[] }) => {
       data={data}
       scrollAnimationDuration={1000}
       onSnapToItem={(index: number) => console.log('current index:', index)}
-      renderItem={({ item }: { item: string }) => 
-        <Card imageUrl={item} />
+      renderItem={({ item }: { item: Meme }) => 
+        <Card meme={item} />
       }
     />
   );
