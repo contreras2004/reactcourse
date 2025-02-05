@@ -39,17 +39,21 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
         Choose your meme 👀
       </Text>
       {memes.length > 0 ? <CustomCarousel data={memes} /> : <ActivityIndicator size="large" color="#0000ff" /> }
-      
-      <TouchableOpacity 
+      <StatusBar style="auto" />
+    </View>
+  );
+
+  /*
+    Ejemplo de boton con estilo de tailwindcss
+    
+    <TouchableOpacity 
         onPress={() => navigation.navigate('Detail')}
         className="bg-blue-600 p-4 rounded-lg mb-8"
       >
         <Text className="text-white text-lg">Go to Detail</Text>
       </TouchableOpacity>
-
-      <StatusBar style="auto" />
-    </View>
-  );
+  
+  */
 }
 
 const styles = StyleSheet.create({

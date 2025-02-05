@@ -1,45 +1,46 @@
 import React from 'react';
-import { Dimensions, Text, View, Image, StyleSheet } from 'react-native';
+import { Dimensions, Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
+import { useNavigation } from '@react-navigation/native';
 import Card from './Card';
 import { Meme } from './Card';
 
 const CustomCarousel = ({ data }: { data: Meme[] }) => {
   const width = Dimensions.get('window').width;
-  
+
+  const navigation = useNavigation();
+
+  const handleMemePress = (meme: Meme) => {
+    // Navigate to DetailScreen and pass the meme data
+    navigation.navigate('Detail', { meme });
+  };
+
   return (
     <Carousel
       loop
       width={width}
-      height={width}
+      height={width * 1.4}
       autoPlay
       data={data}
       scrollAnimationDuration={1000}
       onSnapToItem={(index: number) => console.log('current index:', index)}
       renderItem={({ item }: { item: Meme }) => 
-        <Card meme={item} />
+        <TouchableOpacity 
+          onPress={() => handleMemePress(item)}
+          style={styles.touchableWrapper}  // Apply styles here to maintain height
+        >
+          <Card meme={item} />
+        </TouchableOpacity>
       }
     />
   );
 };
 
 const styles = StyleSheet.create({
-  card: {
-    flex: 1,
-    borderWidth: 1,
-    justifyContent: 'center',
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    marginHorizontal: 10,
-    marginVertical: 10,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
+  touchableWrapper: {
+    flex: 1,  // Ensure that TouchableOpacity stretches to the size of its children
+    justifyContent: 'center',  // Center content if necessary
+    alignItems: 'center',  // Align items (optional)
   },
 });
 

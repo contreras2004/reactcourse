@@ -9,11 +9,10 @@ export default function RootNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* Tabs are inside the stack */}
         <Stack.Screen 
           name="Tabs" 
           component={TabNavigator} 
-          options={{ headerShown: false }} // 👈 Hides stack header for tabs
+          options={{ headerShown: false }}
         />
         <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>

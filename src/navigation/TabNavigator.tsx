@@ -20,11 +20,11 @@ export default function TabNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen 
-        name="Home" 
-        component={HomeScreen} // Pass HomeScreen component here directly
+        name="Meme Selector" 
+        component={HomeScreen}
       />
       <Tab.Screen 
-        name="Detail" 
+        name="Meme Detail" 
         component={DetailScreen}
       />
     </Tab.Navigator>

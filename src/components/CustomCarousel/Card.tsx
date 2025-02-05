@@ -8,9 +8,10 @@ export interface Meme {
 }
 
 const Card = ({ meme }: { meme: Meme }) => (
+
   <View style={styles.card}>
     <Image source={{ uri: meme.url }} style={styles.image} resizeMode="cover" />
-    <View style={styles.overlay}>
+    <View style={styles.title}>
       <Text style={styles.name}>{meme.name}</Text>
     </View>
   </View>
@@ -19,9 +20,7 @@ const Card = ({ meme }: { meme: Meme }) => (
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    borderWidth: 1,
     justifyContent: 'center',
-    borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
@@ -32,19 +31,22 @@ const styles = StyleSheet.create({
     height: 200,
     position: 'relative',
     overflow: 'hidden', // Added to prevent elements from showing outside of the card boundaries
+    width: "100%",
   },
   image: {
-    width: '100%',
-    height: '100%',
+    borderWidth: 1,
+    borderRadius: 10,
+    width: '90%',
+    height: '90%',
+    alignSelf: 'center',
   },
-  overlay: {
-    position: 'absolute',
-    bottom: 10,
-    left: 10,
-    right: 10,
+  title: {
+    width: '90%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     padding: 10,
     borderRadius: 10,
+    alignSelf: 'center',
+    marginTop: 10,
   },
   name: {
     color: 'white',
