@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "Workshop-1",
-    "slug": "Workshop-1",
+    "scheme": "Memes",
+    "name": "Memes",
+    "slug": "Memes",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,7 +15,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.matiascontreras.Workshop1"
+      "bundleIdentifier": "com.matiascontreras.memes"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +30,9 @@
       "eas": {
         "projectId": "14576a13-1e64-4901-9fda-86066a43305c"
       }
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

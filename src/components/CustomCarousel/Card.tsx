@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-
 export interface Meme {
   id: string;
   url: string;
@@ -32,6 +31,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     height: 200,
     position: 'relative',
+    overflow: 'hidden', // Added to prevent elements from showing outside of the card boundaries
   },
   image: {
     width: '100%',
