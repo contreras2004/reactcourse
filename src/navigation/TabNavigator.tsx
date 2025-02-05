@@ -1,16 +1,32 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import { Text } from 'react-native';
+import DetailScreen from '../screens/DetailScreen/DetailScreen';
+
+
+/*const Tab = createBottomTabNavigator();
+
+export default function TabNavigator() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Profile" component={DetailScreen} />
+    </Tab.Navigator>
+  );
+}*/
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Selector de Meme" component={HomeScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator>
+      <Tab.Screen 
+        name="Home" 
+        component={HomeScreen} // Pass HomeScreen component here directly
+      />
+      <Tab.Screen 
+        name="Detail" 
+        component={DetailScreen}
+      />
+    </Tab.Navigator>
   );
 }
