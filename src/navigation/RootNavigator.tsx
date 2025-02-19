@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+/*import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigator from './TabNavigator';
 import DetailScreen from '../screens/DetailScreen/DetailScreen';
@@ -19,3 +19,4 @@ export default function RootNavigator() {
     </NavigationContainer>
   );
 }
+*/

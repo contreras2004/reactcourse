@@ -1,19 +1,12 @@
-/*import { Stack } from "expo-router";
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Tabs } from "expo-router";
+// app/tabs/_layout.tsx
+import { Tabs } from 'expo-router';
 
-export default function _layout() {
+export default function Layout() {
   return (
-    <View>
-      <Text>_layout</Text>
-    </View>
-  )
-}*/
-
-/*
-import Drawer from 'expo-router';
-<Drawer>  
-  <Drawer.Screen name="index" options={{ title: 'Overview' }} />
-</Drawer>
-*/
+    // Aquí se define la estructura general de las pestañas
+    <Tabs>
+      <Tabs.Screen name="Home" />
+      <Tabs.Screen name="Detail" />
+    </Tabs>
+  );
+}

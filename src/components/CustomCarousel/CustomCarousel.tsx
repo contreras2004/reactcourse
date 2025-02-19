@@ -11,8 +11,8 @@ const CustomCarousel = ({ data }: { data: Meme[] }) => {
   const navigation = useNavigation();
 
   const handleMemePress = (meme: Meme) => {
-    // Navigate to DetailScreen and pass the meme data
-    navigation.navigate('Detail', { meme });
+    // Navigate to DetailScreen and pass the meme data using expo-router
+    navigation.navigate('meme-detail', { params: { meme } });
   };
 
   return (
@@ -27,7 +27,7 @@ const CustomCarousel = ({ data }: { data: Meme[] }) => {
       renderItem={({ item }: { item: Meme }) => 
         <TouchableOpacity 
           onPress={() => handleMemePress(item)}
-          style={styles.touchableWrapper}  // Apply styles here to maintain height
+          style={styles.touchableWrapper} 
         >
           <Card meme={item} />
         </TouchableOpacity>
@@ -38,9 +38,9 @@ const CustomCarousel = ({ data }: { data: Meme[] }) => {
 
 const styles = StyleSheet.create({
   touchableWrapper: {
-    flex: 1,  // Ensure that TouchableOpacity stretches to the size of its children
-    justifyContent: 'center',  // Center content if necessary
-    alignItems: 'center',  // Align items (optional)
+    flex: 1, 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

@@ -1,20 +1,12 @@
-import { Tabs } from "expo-router";
+// app/tabs/_layout.tsx
+import { Tabs } from 'expo-router';
 
-export default function TabsLayout() {
+export default function Layout() {
   return (
+    // Aquí se define la estructura general de las pestañas
     <Tabs>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-        }}
-      />
-      <Tabs.Screen
-        name="about"
-        options={{
-          title: "About",
-        }}
-      />
+      <Tabs.Screen name="Home" />
+      <Tabs.Screen name="Detail" />
     </Tabs>
   );
 }

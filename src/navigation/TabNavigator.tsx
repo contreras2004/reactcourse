@@ -1,18 +1,6 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+/*import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import DetailScreen from '../screens/DetailScreen/DetailScreen';
-
-
-/*const Tab = createBottomTabNavigator();
-
-export default function TabNavigator() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Profile" component={DetailScreen} />
-    </Tab.Navigator>
-  );
-}*/
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +8,7 @@ export default function TabNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen 
-        name="Meme Selector" 
+        name="Meme Selector"
         component={HomeScreen}
       />
       <Tab.Screen 
@@ -30,3 +18,4 @@ export default function TabNavigator() {
     </Tab.Navigator>
   );
 }
+*/
