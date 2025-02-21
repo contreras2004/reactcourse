@@ -7,22 +7,23 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="(stack)"
                 options={{
-                title: "Meme Selector",
-                headerTitleAlign: "center",
-                tabBarIcon: ({ color, size }) => (
-                    <Ionicons name="home" size={size} color={color} />
-                ),
+                    headerShown: false,
+                    title: "Meme Selector",
+                    headerTitleAlign: "center",
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="home" size={size} color={color} />
+                    ),
                 }}
             />
             <Tabs.Screen
                 name="newPage"
                 options={{
-                title: "NewPage",
-                headerTitleAlign: "center",
-                headerShown: false,
-                tabBarIcon: ({ color, size }) => (
-                    <Ionicons name="albums" size={size} color={color} />
-                ),
+                    title: "NewPage",
+                    headerTitleAlign: "center",
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="albums" size={size} color={color} />
+                    ),
                 }}
             />
         </Tabs>

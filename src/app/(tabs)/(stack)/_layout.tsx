@@ -13,8 +13,21 @@ export default function TabsLayout() {
   };
 
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
+    <Stack
+      /*screenOptions={{
+        headerLeft: ({ canGoBack }) => (
+          <Ionicons
+            name={canGoBack ? "arrow-back" : "menu"}
+            size={24}
+            color={"gray"}
+            className="ml-2"
+            onPress={() => handlePress(canGoBack)}
+          />
+        ),
+        headerTitleAlign: "center",
+      }}*/
+    >
+      <Stack.Screen name="index"/>
       <Stack.Screen name="newPage" />
     </Stack>
   );
