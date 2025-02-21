@@ -4,6 +4,7 @@ import Carousel from 'react-native-reanimated-carousel';
 import { useNavigation } from '@react-navigation/native';
 import Card from './Card';
 import { Meme } from './Card';
+import { router } from "expo-router";
 
 const CustomCarousel = ({ data }: { data: Meme[] }) => {
   const width = Dimensions.get('window').width;
@@ -11,9 +12,12 @@ const CustomCarousel = ({ data }: { data: Meme[] }) => {
   const navigation = useNavigation();
 
   const handleMemePress = (meme: Meme) => {
-    // Navigate to DetailScreen and pass the meme data
-    navigation.navigate('Detail', { meme });
+    router.push(`/meme/${meme.id}`); 
   };
+  
+  /*const handleMemePress = (meme: Meme) => {
+    router.push(`/${meme.id}`); 
+  };*/
 
   return (
     <Carousel

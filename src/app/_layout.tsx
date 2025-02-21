@@ -1,20 +1,14 @@
-import { Tabs } from "expo-router";
+import React from "react";
+import { Slot } from "expo-router";
+import { MemeProvider } from "@/services/MemeProvider";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-export default function TabsLayout() {
+export default function RootLayout() {
   return (
-    <Tabs>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-        }}
-      />
-      <Tabs.Screen
-        name="about"
-        options={{
-          title: "About",
-        }}
-      />
-    </Tabs>
+    <MemeProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Slot />
+      </GestureHandlerRootView>
+    </MemeProvider>
   );
 }

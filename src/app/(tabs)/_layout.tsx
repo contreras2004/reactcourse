@@ -1,19 +1,31 @@
-/*import { Stack } from "expo-router";
-import { View, Text } from 'react-native'
-import React from 'react'
 import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function _layout() {
-  return (
-    <View>
-      <Text>_layout</Text>
-    </View>
-  )
-}*/
-
-/*
-import Drawer from 'expo-router';
-<Drawer>  
-  <Drawer.Screen name="index" options={{ title: 'Overview' }} />
-</Drawer>
-*/
+export default function TabLayout() {
+    return (
+        <Tabs>
+            <Tabs.Screen
+                name="(stack)"
+                options={{
+                title: "Meme Selector",
+                headerTitleAlign: "center",
+                tabBarIcon: ({ color, size }) => (
+                    <Ionicons name="home" size={size} color={color} />
+                ),
+                }}
+            />
+            <Tabs.Screen
+                name="newPage"
+                options={{
+                title: "NewPage",
+                headerTitleAlign: "center",
+                headerShown: false,
+                tabBarIcon: ({ color, size }) => (
+                    <Ionicons name="albums" size={size} color={color} />
+                ),
+                }}
+            />
+        </Tabs>
+    );
+}
+    
